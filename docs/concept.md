@@ -119,7 +119,9 @@ LLM видит только таксономию корзин (короткий 
 | Контроллер лица | [Seeed XIAO ESP32S3 Sense](https://www.tokopedia.com/artium-official-store/seeed-studio-xiao-esp32s3-sense-2-4ghz-wi-fi-ble-5-0-ov2640-camera-sensor-digital-microphone-8mb-psram-8mb-flash-battery-charge-supported-rich-interface-iot-embedded-ml-1730813033503950102) | artium-official-store | Rp355.000 |
 | Звук (выход) | [MAX98357 I2S, 3W](https://www.tokopedia.com/alfaelectro/max98357-i2s-3w-class-d-amplifier-dac-decoder-module-max98357a-1733864629661500944) | alfaelectro | Rp55.000 |
 | Микрофоны | [INMP441 I2S](https://www.tokopedia.com/elca-studio/inmp441-mems-omnidirectional-microphone-module-i2s-high-precision) × 2 (направление звука по разнице времени) | elca-studio | Rp79.000 |
-| Шея | [MG90S](https://shop-id.tokopedia.com/pdp/motor-servo-mg90s-tower-pro-gear-metal-180-derajat/1729621078345745583) × 3 (поворот, кивок, наклон) | Eazyfast Store | цену не видно |
+| Шея-лампа: голова | [MG90S](https://shop-id.tokopedia.com/pdp/motor-servo-mg90s-tower-pro-gear-metal-180-derajat/1729621078345745583) × 3: кивок и наклон головы + 1 запасная. См. [решение про лампу](decisions/0001-lamp-neck.md) | Eazyfast Store | цену не видно |
+| Шея-лампа: рука | [MG996R](https://www.tokopedia.com/mitraspareparts/mg996r-gear-servo-high-torque-motor-pwm-arduino-metal-brass-gear) × 4: поворот основания, плечо, локоть + 1 запасная. Лот подозрительно дешёвый, в описании пластиковые шестерни — похоже на клон, лучше взять у проверенного продавца | mitraspareparts | от Rp31.000/шт |
+| Драйвер сервов | [PCA9685, 16 каналов, собранный](https://www.tokopedia.com/jogjarobotika/16-channel-12-bit-pwm-servo-driver-module-shiled-i2c-interface-pca9685). Не брать «unassembled» | jogjarobotika | Rp50.000 |
 | Глаза | [GC9A01 1.28" круглый, 240×240](https://www.tokopedia.com/mechatron/tft-display-1-28-inch-lcd-module-round-rgb-240-240-gc9a01-240x240) × 2 (вариант «Bulat 7 pin», 3.3V). Запасной: [HwThinker](https://www.tokopedia.com/hwthinker/modul-tft-display-1-28-inch-lcd-round-rgb-240-240-gc9a01-240x240-spi) Rp82.000/шт. Запрос на Токопедии: `gc9a01` | mechatron | Rp178.000 |
 | Батареи UPS | [Molicel P30B 18650 3000 мА·ч](https://www.tokopedia.com/find/molicel-18650) × 2 (deKloud, 1000+ продаж). Запрос: `molicel 18650` | deKloud | Rp195.800 |
 | Охлаждение | [Official Heatsink and Active Cooler for Pi 5](https://www.tokopedia.com/yunistore73/official-heatsink-and-active-cooler-for-raspberry-pi-5-terjamin) — дороговато (официально ~$6); у [wrteknologi](https://www.tokopedia.com/wrteknologi/raspberry-pi-5-active-cooler-and-heatsink) тоже есть, цену поиск не показал | yunistore73 | Rp320.000 |
@@ -127,7 +129,7 @@ LLM видит только таксономию корзин (короткий 
 | Карта | [SanDisk Ultra microSD 64GB](https://www.tokopedia.com/find/microsdxc) | Doran Authorized Store | Rp253.000 |
 | Питание сервов | [Адаптер 5V 5A, джек 5.5 мм](https://www.tokopedia.com/jaya-sentosa-/etalase/adaptor) | jaya-sentosa- | Rp54.500 |
 | Конденсатор | [Elco 1000 мкФ 25V Nippon Chemi-con](https://www.tokopedia.com/bahagiaservice/etalase/elco) — на питание сервов | Bahagia Electronics | Rp2.000 |
-| | **Итого по найденному** | | **≈ Rp5.614.000** |
+| | **Итого по найденному** | | **≈ Rp5.788.000** |
 
 **Не нашёл на Токопедии / не проверял:**
 
@@ -170,7 +172,9 @@ LLM видит только таксономию корзин (короткий 
 | XIAO ESP32S3 | Микроконтроллер с ноготь. «Лицо»: рисует глаза и крутит шею. Pi говорит что делать, он делает плавно и в реальном времени | [вики Seeed](https://wiki.seeedstudio.com/xiao_esp32s3_getting_started) · [пины](https://wiki.seeedstudio.com/xiao_esp32s3_pin_multiplexing/) |
 | MAX98357 | Звуковая карта + усилитель: цифровой звук от Pi → сразу на динамик | [гайд Adafruit](https://learn.adafruit.com/adafruit-max98357-i2s-class-d-mono-amp) |
 | INMP441 × 2 | Цифровые микрофоны — уши. Два, чтобы понимать, с какой стороны звук | [для Pi](https://learn.adafruit.com/adafruit-i2s-mems-microphone-breakout/raspberry-pi-wiring-test) · [пара L/R](https://shillehtek.com/blogs/shillehtek-product-manuals/inmp441-i2s-omnidirectional-microphone-module-with-soldering-manual) |
-| MG90S × 3 | Сервомоторы с металлическими шестернями — мышцы шеи: поворот, кивок, наклон | — |
+| MG90S | Маленькие сервомоторы с металлическими шестернями — мышцы головы: кивок и наклон к плечу | — |
+| MG996R | Сервомоторы покрупнее и посильнее — мышцы руки-лампы: поворот основания, плечо, локоть | [даташит](https://courses.ece.cornell.edu/ece5990/ECE5725_Spring2020_Projects/May_15_Demo/Smart%20Lock/W_pp445_yl656/datasheet/MG996R_Tower-Pro.pdf) |
+| PCA9685 | Плата на 16 сервов: XIAO говорит ей по двум проводам, какой угол держать, она сама шлёт ШИМ | — |
 | GC9A01 × 2 | Круглые экранчики 1.28" — нарисованные глаза | [DroneBot: глаза на ESP32](https://dronebotworkshop.com/gc9a01) · [Adafruit Monster Eyes](https://learn.adafruit.com/adafruit-monster-eyes) |
 
 ## Как соединяется
@@ -183,10 +187,12 @@ LLM видит только таксономию корзин (короткий 
    │               │                 │                   │
  Камера      XIAO ESP32S3       MAX98357 → динамик    INMP441 × 2
               │          │
-            SPI        ШИМ
+            SPI         I2C
               │          │
-       GC9A01 × 2     MG90S × 3 ← отдельная зарядка 5V 2–3A
-         (глаза)        (шея)       + конденсатор 1000 мкФ
+       GC9A01 × 2     PCA9685 ← отдельная зарядка 5V 5A
+         (глаза)        │          + конденсатор 1000 мкФ
+                        ├── MG996R × 3 (основание, плечо, локоть)
+                        └── MG90S × 2 (кивок, наклон головы)
 ```
 
 | Связь | Провода |
@@ -197,12 +203,14 @@ LLM видит только таксономию корзин (короткий 
 | MAX98357 → Pi | Vin → 5V (пин 2), GND → GND, BCLK → GPIO18 (пин 12), LRC → GPIO19 (пин 35), DIN → GPIO21 (пин 40). Динамик на клеммы + и − |
 | INMP441 × 2 → Pi | VDD → 3.3V (пин 1), GND, SCK → GPIO18, WS → GPIO19 (общие с усилителем), SD → GPIO20 (пин 38). L/R: у одного на GND (левый), у другого на 3.3V (правый) — оба на одной линии данных как стерео |
 | Дисплеи → XIAO | Общие у обоих: VCC → 3V3, GND, SCL → D8, SDA → D10, DC → D3, RST → D4, BLK → 3V3. Раздельно: CS левого → D1, CS правого → D0 |
-| Сервы → XIAO | Сигнал (оранжевый) → D5, D9, D7. Питание (красный/коричневый) — от отдельной зарядки 5V. Минус зарядки соединить с GND XIAO |
+| PCA9685 → XIAO | VCC → 3V3, GND → GND, SDA → D5, SCL → D9 (у ESP32-S3 I2C назначается на любые пины). Клеммы V+ и GND платы — от отдельной зарядки 5V, туда же конденсатор 1000 мкФ |
+| Сервы → PCA9685 | Втыкаются своими разъёмами в каналы 0–4: 0 основание, 1 плечо, 2 локоть, 3 кивок, 4 наклон головы |
 
 **Подводные камни:**
 
 - Два «реалистичных» глаза на ESP32-S3 — порядка 20 кадров/с на глаз (у одного глаза ~39). Мультяшные глаза проще и быстрее.
-- У XIAO 11 GPIO, на D2, D6, D7 есть загрузочные/системные роли. D7 под серву после загрузки обычно ок, но сверить при сборке.
+- У XIAO 11 GPIO, на D2, D6, D7 есть загрузочные/системные роли. С PCA9685 сервы на пины XIAO больше не вешаются, D7 свободен.
+- XIAO и дисплеи живут в голове, Pi и PCA9685 — в основании. Вверх по руке идут USB-кабель, шлейф камеры, 4 провода I2C и удлинители двух серв головы. I2C на ~40 см работает на 100 кГц; если будут сбои — витая пара или PCA9685 переносить в голову.
 - Одновременный I2S-вход и выход на Pi настраивается device-tree оверлеем — первая мутная точка, разбираться при сборке.
 - Камерную плату XIAO Sense можно не ставить: камера там не нужна.
 
@@ -213,11 +221,14 @@ LLM видит только таксономию корзин (короткий 
 **Ещё нужно (не в списке, на Токопедии не проверял):**
 
 - Паяльник + припой: у дешёвых модулей (MAX98357, INMP441, часто XIAO и дисплеи) штырьки идут неприпаянными.
-- Кронштейн pan-tilt под MG90S (2 оси); третью ось (наклон) и корпус головы — придумывать самим.
+- Звенья руки-лампы, узел головы (кивок + наклон) и корпус — придумывать самим: печать, фанера или алюминиевый профиль.
+- Подшипник «ленивая Сюзанна» 4 дюйма под поворот основания, чтобы вес держал он, а не серва. На Токопедии не нашёл поиском, запрос `bearing lazy susan`; за рубежом ~$5.
+- Пружины растяжения (`per tarik`) — противовес плеча и локтя, подбирать по месту.
+- Удлинители серв (`kabel ekstensi servo`) для MG90S в голове.
 - Макетная плата + провода-дюпоны для первых проверок.
 - Кабель USB-A → USB-C (Pi ↔ XIAO).
-- Шлейф камеры под Pi 5, переходник «джек 5.5 → клеммы» для питания сервов.
-- Запасная серва MG90S: попадается брак.
+- Шлейф камеры под Pi 5 длиной 500 мм: голова на руке далеко от Pi. Шлейф гнётся в суставах, вести его по оси вращения. Переходник «джек 5.5 → клеммы» для питания сервов.
+- Запасные MG90S и MG996R уже в списке: попадается брак.
 
 **Как обойтись без пайки:**
 
@@ -243,7 +254,7 @@ LLM видит только таксономию корзин (короткий 
 3. Камера → снимок.
 4. Усилитель + динамик → звук. Микрофоны → запись.
 5. XIAO + один дисплей → картинка, потом второй.
-6. Одна серва → движение, потом три от отдельного питания.
+6. PCA9685 + одна серва → движение, потом все пять от отдельного питания.
 7. Pi ↔ XIAO: команды по USB.
 8. Только после этого — «душа».
 
@@ -265,7 +276,7 @@ LLM видит только таксономию корзин (короткий 
    - печать на заказ — на Токопедии есть продавцы «jasa 3d print» (например, [3dmania](https://www.tokopedia.com/3dmania/jasa-print-maket-3d-printing)), везут с Явы;
    - для первого прототипа хватит картона, фанеры или готовой коробки.
    - Нюансы Бали: PLA размягчается уже при ~55–60 °C (на солнце или в машине его поведёт), в жару лучше PETG; пластик тянет влагу, хранить в закрытой коробке с силикагелем.
-4. Облик: птица на насесте / лампа / своё.
+4. ~~Облик: птица на насесте / лампа / своё.~~ Решено: настольная лампа, см. [decisions/0001-lamp-neck.md](decisions/0001-lamp-neck.md).
 5. Облако: отправлять кадры или только текстовые описания.
 
 ---
